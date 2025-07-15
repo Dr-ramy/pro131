@@ -16,12 +16,16 @@ export default function Home() {
     <>
       <div className="container mx-auto px-4 py-6">
         <header className="text-center mb-1">
-          <p
-            id="adress"
-            className="custom-font text-xl sm:text-2xl md:text-3xl font-bold break-words"
-          >
-برنامج مقترح فى ضوء المعايير الدولية قائم على التعلم المدمج لتنمية مهارات التدريس والدافعية المهنية لدى الطلاب معلمي الاجتماعيات بالجامعات العراقية
-          </p>
+<p
+  id="adress"
+  className="custom-font text-xl sm:text-2xl md:text-3xl font-bold break-words"
+  dir="rtl"
+  lang="ar"
+>
+  برنامج مقترح في ضوء نموذج تيباك &quot;TPACK&quot; لتنمية بعض الكفايات الرقمية والذكاء الانفعالي لدى الطلاب معلمي الدراسات الاجتماعية
+</p>
+
+
 
           <ScrollToggleButton />
 

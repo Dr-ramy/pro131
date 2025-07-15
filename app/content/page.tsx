@@ -18,13 +18,13 @@ export default async function ContentPage() {
     <div className="w-full h-full overflow-hidden">
       {groupid === 10 && (
         <>
-          <Header courseTitle="مهارات التدريس" />
+          <Header courseTitle="الكفايات الرقمية" />
           <VideoGallery />
         </>
       )}      
       {groupid === 1 && (
         <>
-          <Header courseTitle="مهارات التدريس" />
+          <Header courseTitle="الكفايات الرقمية" />
           <VideoGallery />
         </>
       )}

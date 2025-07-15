@@ -33,27 +33,16 @@ export default function LessonSidebar({
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const lessonname = [
-    "التخطيط",
-    "تحليل محتوى الدرس",
-    "الأهداف التربوية",
-    "خطة الدرس",
-    "التهيئة والتمهيد للدرس",
-    "التعزيز",
-    "التنوع في طرق التدريس",
-    "استخدام الوسائل التعليمية",
-    "طرح الأسئلة الصفية",
-    "إدارة الصف",
-    "غلق الدرس",
-    "تعريف التقويم التربوي",
-    "الفرق بين التقويم والتقييم والقياس",
-    "أهداف التقويم التربوي",
-    "أهمية التقويم التربوي",
-    "خصائص التقويم الفعال",
-    "أنواع التقويم التربوي",
-    "اتجاهات في التقويم التربوي",
-    "شروط الواجب المنزلي الفعال",
-  ];
+const lessonname = [
+  "استخدام مصادر الشبكة العالمية",
+  "التعامل مع تخزين الفعاليات السحابية",
+  "مهارة التعامل مع برامج مستندات جوجل",
+  "مهارات التعامل مع العروض التقديمية",
+  "مهارات التعامل مع جداول البيانات",
+  "إنشاء اختبار إلكتروني",
+  "الإعداد النهائي للدرس التكنولوجي وتنفيذه"
+];
+
 
   return (
     <>
@@ -81,14 +70,14 @@ export default function LessonSidebar({
 
           {/* إعداد التعلم */}
           <CustomAccordion
-            title="إعداد التعلم"
+            title="قبل التعلم"
             icon={<FaCog className="text-lg" />}
             items={[
               {
                 id: 'extra1',
                 text: 'الاختبار القبلي',
                 icon: <FaPlus className="text-gray-500" />,
-                onClick: () => window.open('https://forms.gle/Un8GEsKoS5r79nGBA', '_blank'),
+                onClick: () => window.open('https://forms.gle/QNadSDXY3BKJhXdV6', '_blank'),
               },
               {
                 id: 'extra2',
@@ -115,42 +104,12 @@ export default function LessonSidebar({
           <hr className="my-1 border-t-2 border-gray-300" />
 
           {/* الوحدة الأولى */}
-          <div className="text-lg font-bold text-blue-700">الوحدة الأولى: مهارات التخطيط للدرس</div>
+          <div className="text-lg font-bold text-blue-700">الكفايات الرقمية</div>
           <div className="space-y-2">
-            {Object.entries(lessons).slice(0, 4).map(([, items], i) => (
+            {Object.entries(lessons).slice(0, 7).map(([, items], i) => (
               <LessonDropdown
                 key={i}
                 title={` ${lessonname[i]}`}
-                items={items}
-                currentVideo={currentVideo}
-                visitedIds={visitedIds}
-                onSelect={onSelect}
-              />
-            ))}
-          </div>
-
-          {/* الوحدة الثانية */}
-          <div className="text-lg font-bold text-blue-700 mt-4">الوحدة الثانية: مهارات تنفيذ الدرس</div>
-          <div className="space-y-2">
-            {Object.entries(lessons).slice(4, 11).map(([, items], i) => (
-              <LessonDropdown
-                key={i}
-                title={` ${lessonname[i + 4]}`}
-                items={items}
-                currentVideo={currentVideo}
-                visitedIds={visitedIds}
-                onSelect={onSelect}
-              />
-            ))}
-          </div>
-
-          {/* الوحدة الثالثة */}
-          <div className="text-lg font-bold text-blue-700 mt-4">الوحدة الثالثة: التقويم التربوي</div>
-          <div className="space-y-2">
-            {Object.entries(lessons).slice(11, 19).map(([, items], i) => (
-              <LessonDropdown
-                key={i}
-                title={` ${lessonname[i + 11]}`}
                 items={items}
                 currentVideo={currentVideo}
                 visitedIds={visitedIds}
@@ -163,14 +122,14 @@ export default function LessonSidebar({
 
           {/* تثبيت التعلم */}
           <CustomAccordion
-            title="تثبيت التعلم"
+            title="بعد التعلم"
             icon={<FaCog className="text-lg" />}
             items={[
               {
                 id: 'extra5',
                 text: 'الاختبار البعدي',
                 icon: <FaPlus className="text-gray-500" />,
-                onClick: () => window.open('https://forms.gle/HvTvkCdmucT7ezha6', '_blank'),
+                onClick: () => window.open('https://forms.gle/FagFNao3CWKCKdw27', '_blank'),
               },
               {
                 id: 'extra6',
