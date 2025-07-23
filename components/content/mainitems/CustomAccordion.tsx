@@ -4,14 +4,15 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 type AccordionItem = {
   id: string;
-  text: string;
+  text?: string;
   icon?: React.ReactNode;
   onClick?: () => void;
+  customComponent?: React.ReactNode; // NEW: Optional custom JSX (e.g., modal trigger)
 };
 
 type Props = {
   title: string;
-  icon?: React.ReactNode;  // أيقونة للزر الرئيسي
+  icon?: React.ReactNode;
   items: AccordionItem[];
 };
 
@@ -34,17 +35,21 @@ export default function CustomAccordion({ title, icon, items }: Props) {
 
       {expanded && (
         <div className="mt-2 space-y-2">
-          {items.map((btn) => (
-            <Button
-              key={btn.id}
-              variant="ghost"
-              className="w-full justify-start text-right px-4 py-2 rounded-md flex items-center gap-2"
-              onClick={btn.onClick}
-            >
-              {btn.icon}
-              <span className="text-sm truncate">{btn.text}</span>
-            </Button>
-          ))}
+          {items.map((item) =>
+            item.customComponent ? (
+              <div key={item.id}>{item.customComponent}</div>
+            ) : (
+              <Button
+                key={item.id}
+                variant="ghost"
+                className="w-full justify-start text-right px-4 py-2 rounded-md flex items-center gap-2"
+                onClick={item.onClick}
+              >
+                {item.icon}
+                <span className="text-sm truncate">{item.text}</span>
+              </Button>
+            )
+          )}
         </div>
       )}
     </div>

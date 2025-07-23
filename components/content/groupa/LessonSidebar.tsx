@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger,} from "@/components/ui/sheet";
 import LessonDropdown from "../mainitems/LessonDropdown";
 import CustomAccordion from "../mainitems/CustomAccordion";
 import { Button } from "@/components/ui/button";
@@ -16,6 +9,7 @@ import { lessons } from "./LessonData";
 import { useState } from "react";
 import { FaChevronCircleLeft, FaPlus, FaCog } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
+import GeminiChatModal from "@/components/ai/GeminiChatModal"
 
 type Props = {
   currentVideo?: VideoItem;
@@ -98,6 +92,20 @@ const lessonname = [
                 onClick: () =>
                   window.open('https://www.microsoft.com/en-us/microsoft-teams/group-chat-software', '_blank'),
               },
+{
+  id: 'extra5',
+  customComponent: (
+    <GeminiChatModal
+      trigger={
+        <Button variant="ghost" className="w-full justify-start text-right px-4 py-2 gap-2">
+          <FaPlus className="text-gray-500" />
+          المساعد الآلي
+        </Button>
+      }
+    />
+  )
+}
+
             ]}
           />
 
@@ -126,16 +134,10 @@ const lessonname = [
             icon={<FaCog className="text-lg" />}
             items={[
               {
-                id: 'extra5',
+                id: 'extra6',
                 text: 'الاختبار البعدي',
                 icon: <FaPlus className="text-gray-500" />,
                 onClick: () => window.open('https://forms.gle/FagFNao3CWKCKdw27', '_blank'),
-              },
-              {
-                id: 'extra6',
-                text: '',
-                icon: <FaPlus className="text-gray-500" />,
-                onClick: () => console.log("ضغطت على زر إضافي 2"),
               },
             ]}
           />
