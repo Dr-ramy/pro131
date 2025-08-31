@@ -25,6 +25,7 @@
     "clsx": "^2.1.1",
     "exceljs": "^4.4.0",
     "framer-motion": "^12.19.1",
+    "google-search-results-nodejs": "^2.1.0",
     "lucide-react": "^0.523.0",
     "mongoose": "^8.16.1",
     "next": "^15.3.4",

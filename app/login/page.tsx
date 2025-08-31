@@ -44,7 +44,7 @@ export default function LoginPage() {
     const session = await fetch('/api/auth/session').then(r => r.json());
     const groupid = session.user?.groupid;
     if (groupid === 10) router.push('/admin');
-    else if (groupid === 1) router.push('/content');
+    else if (groupid <= 9) router.push('/content');
     else {
       const msg = 'غير مصرح لك بالدخول.';
       setError(msg);

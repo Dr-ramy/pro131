@@ -22,7 +22,7 @@ export default function Home() {
   dir="rtl"
   lang="ar"
 >
-  برنامج مقترح في ضوء نموذج تيباك &quot;TPACK&quot; لتنمية بعض الكفايات الرقمية والذكاء الانفعالي لدى الطلاب معلمي الدراسات الاجتماعية
+  تطوير بيئة تكيفية وفق  مستويات تجهيز المعلومات وأثرها فى تنمية التمكين الرقمى وحب الأستطلاع لدى طلاب تكنولوجيا التعليم
 </p>
 
 
@@ -87,7 +87,7 @@ export default function Home() {
                     variant="outline"
                     className="text-blue-600 border-blue-600 hover:bg-blue-50 px-6 py-2 text-sm sm:text-base"
                   >
-                    <Link href={session.user.groupid === 10 ? "/admin" : "/profile"}>
+                    <Link href={session.user.groupid === 10 ? "/admin" : "/content"}>
                       <div className="flex items-center gap-2">
                         <FaUserShield className="w-5 h-5 sm:w-6 sm:h-6" />
                         <span>{session.user.groupid === 10 ? "لوحة المشرف" : "الملف الشخصي"}</span>

@@ -5,7 +5,7 @@ import axios from "axios";
 
 // نوع الرسائل
 export type Message = {
-  sender: "user" | "ai";
+  sender: "user" | "ai" | "system";
   text: string;
 };
 
