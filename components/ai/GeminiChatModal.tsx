@@ -139,7 +139,7 @@ export default function GeminiChatModal({ trigger }: GeminiChatModalProps) {
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="w-[90vw] max-w-2xl h-[85vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle className="text-right">💡 التمكين الرقمي</DialogTitle>
+          <DialogTitle className="text-right">💡 الممارسات التدريسية</DialogTitle>
         </DialogHeader>
 
         {/* أدوات التحكم */}

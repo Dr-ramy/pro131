@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { ButtonItem, VideoItem } from "@/types/types";
 import { lessons } from "./LessonData";
 import { useState } from "react";
-import { FaChevronCircleLeft, FaPlus, FaCog } from "react-icons/fa";
+import { FaChevronCircleLeft,FaUsers,FaGlobe, FaCog,FaClipboardCheck,FaComments } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
-import GeminiChatModal from "@/components/ai/GeminiChatModal3"
+
 
 type Props = {
   currentVideo?: VideoItem;
@@ -28,14 +28,20 @@ export default function LessonSidebar({
   const router = useRouter();
 
 const lessonname = [
-  " الشبكة العالمية والذكاء الأصطناعي",
-  "التخزين السحابي",
-  "مستندات جوجل",
-  "العروض التقديمية",
-  " جداول البيانات",
-  "الاختبارات الإلكترونية",
-  "الدرس الإلكتروني"
+    "الأهداف التعليمية",
+    "تخطيط الدروس",
+    "الوسائل التعليمية",
+    "طرق التدريس",
+    "الأنشطة التعليمية",
+    "عرض الدرس",
+    "الأسئلة الصفية",
+    "إدارة الصف",
+    "التعزيز",
+    "استثارة الدافعية",
+    "التقويم",
+    "إعداد الدروس تكنولوجيًا",
 ];
+
 
 
   return (
@@ -70,38 +76,46 @@ const lessonname = [
               {
                 id: 'extra1',
                 text: 'الاختبار القبلي',
-                icon: <FaPlus className="text-gray-500" />,
-                onClick: () => window.open('https://forms.gle/UuMEzR7E92fX9qRn8', '_blank'),
+                icon: <FaClipboardCheck className="text-gray-500" />,
+                onClick: () => window.open('https://forms.gle/gRCvBhvpghHmHqNJA', '_blank'),
               },
+            ]}
+          />
+          <hr className="my-1 border-t-2 border-gray-300" />
+        {/* مجتمع التعلم */}
+          <CustomAccordion
+            title="مجتمع التعلم"
+            icon={<FaGlobe className="text-lg" />}
+            items={[
               {
                 id: 'extra2',
                 text: 'غرفة المحادثة',
-                icon: <FaPlus className="text-gray-500" />,
+                icon: <FaComments className="text-gray-500" />,
                 onClick: () => router.push('/chat'),
               },
-{
-  id: 'extra5',
-  customComponent: (
-    <GeminiChatModal
-      trigger={
-        <Button variant="ghost" className="w-full justify-start text-right px-4 py-2 gap-2">
-          <FaPlus className="text-gray-500" />
-          المساعد الآلي
-        </Button>
-      }
-    />
-  )
-}
+                {
+                id: 'extra7',
+                text: 'مجتمع مهني',
+                icon: <FaUsers  className="text-gray-500" />,
+                onClick: () => router.push('/content'),
+              },
+                {
+                id: 'extra8',
+                text: 'مجتمع مهني',
+                icon: <FaCog    className="text-gray-500" />,
+                onClick: () => router.push('/content/sub2'),
+              },
 
             ]}
           />
+      
 
           <hr className="my-1 border-t-2 border-gray-300" />
 
           {/* الوحدة الأولى */}
-          <div className="text-lg font-bold text-blue-700">التمكين الرقمى</div>
+          <div className="text-lg font-bold text-blue-700">الممارسات التدريسية</div>
           <div className="space-y-2">
-            {Object.entries(lessons).slice(0, 7).map(([, items], i) => (
+            {Object.entries(lessons).slice(0, 12).map(([, items], i) => (
               <LessonDropdown
                 key={i}
                 title={` ${lessonname[i]}`}
@@ -123,8 +137,8 @@ const lessonname = [
               {
                 id: 'extra6',
                 text: 'الاختبار البعدي',
-                icon: <FaPlus className="text-gray-500" />,
-                onClick: () => window.open('https://forms.gle/aWo8YBBybRrguYuM6', '_blank'),
+                icon: <FaClipboardCheck className="text-gray-500" />,
+                onClick: () => window.open('https://forms.gle/94JmF452ZBpUzEzM8', '_blank'),
               },
             ]}
           />

@@ -27,7 +27,7 @@ export default function GeminiChatModal({ trigger }: GeminiChatModalProps) {
 
   // ✅ النص الأساسي الذي سيتم إضافته دائماً في المحادثة
   const base =
-    "أنت مساعد ذكي. أجب باختصار وبدقة عن الأسئلة المتعلقة التمكين الرقمي فقط. افترض أن المستخدم طالب، وشرح له بشكل واضح ومبسط.";
+    "أنت مساعد ذكي. أجب باختصار وبدقة عن الأسئلة المتعلقة الممارسات التدريسية  فقط. افترض أن المستخدم طالب، وشرح له بشكل واضح ومبسط.";
 
   const handleSend = async () => {
     const trimmed = input.trim();
@@ -63,7 +63,7 @@ export default function GeminiChatModal({ trigger }: GeminiChatModalProps) {
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="w-[90vw] max-w-2xl h-[85vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle className="text-right">💡 التمكين الرقمى</DialogTitle>
+          <DialogTitle className="text-right">💡 الممارسات التدريسية</DialogTitle>
         </DialogHeader>
 
         {/* منطقة عرض المحادثات */}
